@@ -1,27 +1,36 @@
-# ansible-api
+# ansible-api v0.5.1
 
-A restful http api for ansible 2.x
-- v0.2.2 fit for ansible version <=2.3.x
-- v0.2.6 fit for ansible version >=2.6.x (python>=3.5)
+A restful http api for ansible
+python version >= 3.7
 
 ## What is it?
 
 [Ansible](https://github.com/ansible/ansible/) is a radically simple IT automation system.
-If you are trying to use it and not like CLI, you can try me now. I can provide you use ansible by A RESTful HTTP Api
+If you are trying to use it and not like CLI, you can try me now. I can provide you use ansible by A RESTful HTTP Api and a realtime processing message (websocket api), you can see all details.
 
 ## Changelog
 
+- 0.5.1 
+  + add sha256 encryption support for signature (thx: jbackman)
+  + fit for latest ansible(v2.8.6) and ansible-runner(v1.4.2)
+  + add more error event capture in response
+- 0.5.0 replace tornado with sanic, more lightly (python>=3.7) 
+- 0.3.0 using ansible-runner as middleware
 - 0.2.6 adaptive ansible 2.6.4 and add asynchronization mode
 - 0.2.2 optimize log
 - 0.2.1 optimize log and allow mutil-instance in the same host
 - 0.2.0 support websocket, remove code invaded in ansible
 
+## Structure chart
+
+![image](https://github.com/lfbear/ansible-api/raw/master/data/structure.png)
+
 ## How to install
 
-- [preparatory work] python version >= 3.5 (use asyncio featrue)
-- pip3 install git+https://github.com/lfbear/ansible-api.git
+- [preparatory work] python version >= 3.7 (use asyncio featrue)
+- ```pip3 install ansible-api```
 
-## How to use it
+## How to start it
 
 - default configuration: /etc/ansible/api.cfg
 - start: 
